@@ -1,0 +1,207 @@
+<mujoco model="knee model">
+    <compiler angle="radian" autolimits="true" meshdir="./assets/meshes" texturedir="assets" />
+    <option integrator="implicit" />
+    <asset>
+        <mesh file="tibia.stl" name="tibia mesh" scale="0.001 0.001 0.001" />
+        <mesh file="tracker tibia.stl" name="tibia tracker mesh" scale="0.001 0.001 0.001" />
+        <mesh file="fibula.stl" name="fibula mesh" scale="0.001 0.001 0.001" />
+        <mesh file="patella.stl" name="patella mesh" scale="0.001 0.001 0.001" />
+        <mesh file="femur.stl" name="femur mesh" scale="0.001 0.001 0.001" />
+        <mesh file="tracker femur.stl" name="femur tracker mesh" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_0.stl" name="femur_0" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_1.stl" name="femur_1" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_2.stl" name="femur_2" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_0.stl" name="tibia_0" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_1.stl" name="tibia_1" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_2.stl" name="tibia_2" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_3.stl" name="tibia_3" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_0.stl" name="fibula_0" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_1.stl" name="fibula_1" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_2.stl" name="fibula_2" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/patella_0.stl" name="patella_0" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_3.stl" name="femur_3" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_4.stl" name="femur_4" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_5.stl" name="femur_5" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_6.stl" name="femur_6" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_7.stl" name="femur_7" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_8.stl" name="femur_8" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/femur_9.stl" name="femur_9" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_4.stl" name="tibia_4" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_5.stl" name="tibia_5" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_6.stl" name="tibia_6" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_7.stl" name="tibia_7" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_8.stl" name="tibia_8" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_9.stl" name="tibia_9" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_10.stl" name="tibia_10" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_11.stl" name="tibia_11" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/tibia_12.stl" name="tibia_12" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_3.stl" name="fibula_3" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_4.stl" name="fibula_4" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_5.stl" name="fibula_5" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_6.stl" name="fibula_6" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_7.stl" name="fibula_7" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_8.stl" name="fibula_8" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_9.stl" name="fibula_9" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_10.stl" name="fibula_10" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_11.stl" name="fibula_11" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_12.stl" name="fibula_12" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_13.stl" name="fibula_13" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/fibula_14.stl" name="fibula_14" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/patella_1.stl" name="patella_1" scale="0.001 0.001 0.001" />
+        <mesh file="convex_meshes/patella_2.stl" name="patella_2" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <body name="tibia" pos="0.0 0.0 1.6" quat="1 0 0 0">
+            <geom class="visual" euler="0 0 0" mesh="tibia mesh" pos="0 0 0" type="mesh" />
+            <geom class="tracker" euler="0 0 0" mesh="tibia tracker mesh" pos="0 0 0" type="mesh" />
+            <inertial
+                fullinertia="0.0008780700528212282 0.000882003973073614 0.00018810237832225102 -2.0773214139677317e-05 -0.00017248916504192767 -0.00011027907295235728"
+                mass="0.4452526927806469"
+                pos="0.035537882962384665 0.1738143285325765 -0.42422270065004697" />
+            <body euler="0 0 0" name="fibula" pos="0 0 0">
+                <inertial
+                    fullinertia="6.414713658940696e-05 6.720841419660586e-05 5.044916367991743e-06 8.273971128515786e-07 -1.4502261752779585e-05 3.717336306071836e-06"
+                    mass="0.03620870310593307"
+                    pos="0.008065118114846828 0.21070770784463308 -0.4292249651398537" />
+                <geom class="visual" euler="0 0 0" mesh="fibula mesh" pos="0 0 0" type="mesh" />
+                <geom class="collision" mesh="fibula_0" name="fibula_0" type="mesh" />
+                <geom class="collision" mesh="fibula_1" name="fibula_1" type="mesh" />
+                <geom class="collision" mesh="fibula_2" name="fibula_2" type="mesh" />
+                <geom class="collision" mesh="fibula_3" name="fibula_3" type="mesh" />
+                <geom class="collision" mesh="fibula_4" name="fibula_4" type="mesh" />
+                <geom class="collision" mesh="fibula_5" name="fibula_5" type="mesh" />
+                <geom class="collision" mesh="fibula_6" name="fibula_6" type="mesh" />
+                <geom class="collision" mesh="fibula_7" name="fibula_7" type="mesh" />
+                <geom class="collision" mesh="fibula_8" name="fibula_8" type="mesh" />
+                <geom class="collision" mesh="fibula_9" name="fibula_9" type="mesh" />
+                <geom class="collision" mesh="fibula_10" name="fibula_10" type="mesh" />
+                <geom class="collision" mesh="fibula_11" name="fibula_11" type="mesh" />
+                <geom class="collision" mesh="fibula_12" name="fibula_12" type="mesh" />
+                <geom class="collision" mesh="fibula_13" name="fibula_13" type="mesh" />
+                <geom class="collision" mesh="fibula_14" name="fibula_14" type="mesh" />
+            </body>
+            <site name="dMCL_end" pos="{{dMCL.pos_end.x}} {{dMCL.pos_end.y}} {{dMCL.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="HKB_end" pos="{{HKB.pos_end.x}} {{HKB.pos_end.y}} {{HKB.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="LCL_end" pos="{{LCL.pos_end.x}} {{LCL.pos_end.y}} {{LCL.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="POL_end" pos="{{POL.pos_end.x}} {{POL.pos_end.y}} {{POL.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="PS_end" pos="{{PS.pos_end.x}} {{PS.pos_end.y}} {{PS.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="sMCL_end" pos="{{sMCL.pos_end.x}} {{sMCL.pos_end.y}} {{sMCL.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <site name="VKB_end" pos="{{VKB.pos_end.x}} {{VKB.pos_end.y}} {{VKB.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <geom class="collision" mesh="tibia_0" name="tibia_0" type="mesh" />
+            <geom class="collision" mesh="tibia_1" name="tibia_1" type="mesh" />
+            <geom class="collision" mesh="tibia_2" name="tibia_2" type="mesh" />
+            <geom class="collision" mesh="tibia_3" name="tibia_3" type="mesh" />
+            <geom class="collision" mesh="tibia_4" name="tibia_4" type="mesh" />
+            <geom class="collision" mesh="tibia_5" name="tibia_5" type="mesh" />
+            <geom class="collision" mesh="tibia_6" name="tibia_6" type="mesh" />
+            <geom class="collision" mesh="tibia_7" name="tibia_7" type="mesh" />
+            <geom class="collision" mesh="tibia_8" name="tibia_8" type="mesh" />
+            <geom class="collision" mesh="tibia_9" name="tibia_9" type="mesh" />
+            <geom class="collision" mesh="tibia_10" name="tibia_10" type="mesh" />
+            <geom class="collision" mesh="tibia_11" name="tibia_11" type="mesh" />
+            <geom class="collision" mesh="tibia_12" name="tibia_12" type="mesh" />
+            <site name="LP_end" pos="{{LP.pos_end.x}} {{LP.pos_end.y}} {{LP.pos_end.z}}"
+                size="0.001" type="sphere" />
+            <geom class="visual"
+                fromto="0.048301631927490235 0.21166104125976562 -0.3733244934082031 0.04652249145507813 0.13440820312500001 -0.3769089660644531"
+                name="PS_wrap" rgba=".2 .2 .5 0.0" size="0.025" type="cylinder" />
+        </body>
+        <body name="femur" pos="0.0 0.0 1.6" quat="1 0 0 0">
+            <joint type="free" />
+            <inertial
+                fullinertia="0.0014471221093789871 0.0013713473639596421 0.00026087716802195016 7.836769453642076e-08 0.00014400130245007057 -4.208930881634612e-05"
+                mass="0.5077506167421568"
+                pos="0.04206533826380333 0.17074902085470534 -0.2976383647493416" />
+            <geom class="visual" euler="0 0 0" mesh="femur mesh" pos="0 0 0" type="mesh" />
+            <geom class="tracker" euler="0 0 0" mesh="femur tracker mesh" pos="0 0 0" type="mesh" />
+            <body euler="0 0 0" name="patella" pos="0 0 0">
+                <inertial
+                    fullinertia="8.050437146859407e-06 5.03777796133191e-06 5.09380183916241e-06 -8.36996939378859e-09 -1.6579383500434607e-07 -6.20224511993419e-07"
+                    mass="0.04051128232783104"
+                    pos="0.08702158919851656 0.17917502947062694 -0.33507166780519526" />
+                <geom class="visual" euler="0 0 0" mesh="patella mesh" pos="0 0 0" type="mesh" />
+                <geom class="collision" mesh="patella_0" name="patella_0" type="mesh" />
+                <geom class="collision" mesh="patella_1" name="patella_1" type="mesh" />
+                <geom class="collision" mesh="patella_2" name="patella_2" type="mesh" />
+            </body>
+            <site name="dMCL_start"
+                pos="{{dMCL.pos_start.x}} {{dMCL.pos_start.y}} {{dMCL.pos_start.z}}" size="0.001"
+                type="sphere" />
+            <site name="HKB_start" pos="{{HKB.pos_start.x}} {{HKB.pos_start.y}} {{HKB.pos_start.z}}"
+                size="0.001" type="sphere" />
+            <site name="LCL_start" pos="{{LCL.pos_start.x}} {{LCL.pos_start.y}} {{LCL.pos_start.z}}"
+                size="0.001" type="sphere" />
+            <site name="POL_start" pos="{{POL.pos_start.x}} {{POL.pos_start.y}} {{POL.pos_start.z}}"
+                size="0.001" type="sphere" />
+            <site name="PS_start" pos="{{PS.pos_start.x}} {{PS.pos_start.y}} {{PS.pos_start.z}}"
+                size="0.001" type="sphere" />
+            <site name="sMCL_start"
+                pos="{{sMCL.pos_start.x}} {{sMCL.pos_start.y}} {{sMCL.pos_start.z}}" size="0.001"
+                type="sphere" />
+            <site name="VKB_start" pos="{{VKB.pos_start.x}} {{VKB.pos_start.y}} {{VKB.pos_start.z}}"
+                size="0.001" type="sphere" />
+            <geom class="collision" mesh="femur_0" name="femur_0" type="mesh" />
+            <geom class="collision" mesh="femur_1" name="femur_1" type="mesh" />
+            <geom class="collision" mesh="femur_2" name="femur_2" type="mesh" />
+            <geom class="collision" mesh="femur_3" name="femur_3" type="mesh" />
+            <geom class="collision" mesh="femur_4" name="femur_4" type="mesh" />
+            <geom class="collision" mesh="femur_5" name="femur_5" type="mesh" />
+            <geom class="collision" mesh="femur_6" name="femur_6" type="mesh" />
+            <geom class="collision" mesh="femur_7" name="femur_7" type="mesh" />
+            <geom class="collision" mesh="femur_8" name="femur_8" type="mesh" />
+            <geom class="collision" mesh="femur_9" name="femur_9" type="mesh" />
+            <site name="LP_start" pos="{{LP.pos_start.x}} {{LP.pos_start.y}} {{LP.pos_start.z}}"
+                size="0.001" type="sphere" />
+        </body>
+    </worldbody>
+    <tendon>
+        <spatial name="POL" stiffness="{{POL.stiffness}}" damping="{{POL.damping}}"
+            springlength="{{POL.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="POL_start" />
+            <site site="POL_end" />
+        </spatial>
+        <spatial name="HKB" stiffness="{{HKB.stiffness}}" damping="{{HKB.damping}}"
+            springlength="{{HKB.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="HKB_start" />
+            <site site="HKB_end" />
+        </spatial>
+        <spatial name="PS" stiffness="{{PS.stiffness}}" damping="{{PS.damping}}"
+            springlength="{{PS.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="PS_start" />
+            <geom geom="PS_wrap" />
+            <site site="PS_end" />
+        </spatial>
+        <spatial name="dMCL" stiffness="{{dMCL.stiffness}}" damping="{{dMCL.damping}}"
+            springlength="{{dMCL.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="dMCL_start" />
+            <site site="dMCL_end" />
+        </spatial>
+        <spatial name="LCL" stiffness="{{LCL.stiffness}}" damping="{{LCL.damping}}"
+            springlength="{{LCL.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="LCL_start" />
+            <site site="LCL_end" />
+        </spatial>
+        <spatial name="sMCL" stiffness="{{sMCL.stiffness}}" damping="{{sMCL.damping}}"
+            springlength="{{sMCL.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="sMCL_start" />
+            <site site="sMCL_end" />
+        </spatial>
+        <spatial name="VKB" stiffness="{{VKB.stiffness}}" damping="{{VKB.damping}}"
+            springlength="{{VKB.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="VKB_start" />
+            <site site="VKB_end" />
+        </spatial>
+        <spatial name="LP" stiffness="{{LP.stiffness}}" damping="{{LP.damping}}"
+            springlength="{{LP.springlength}}" width="0.002" rgba="0.9 0.2 0.2 0.9">
+            <site site="LP_start" />
+            <site site="LP_end" />
+        </spatial>
+    </tendon>
+</mujoco>

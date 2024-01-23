@@ -1,0 +1,97 @@
+<mujoco model="disk model">
+    <option gravity="0 0 -9.81" />
+
+    <!-- This is our texture -->
+    <asset>
+        <material name="white" rgba="1 1 1 1" />
+    </asset>
+
+    <worldbody>
+        <!-- settings -->
+        <camera name="cam0" pos="0 -1.8 -5" euler="90 0 0" mode="trackcom" />
+        
+        <!-- lower zylinder -->
+        <body name="lower zylinder" pos="0 0 .2" euler="0 0 0">
+
+            <geom type="cylinder" size=".05 .2" rgba="0 0 1 0.5" />
+            <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+
+            <!-- lower plate -->
+            <body name="lower plate" pos="0 0 .2" euler="0 0 0">
+                <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+                <geom type="box" size=".2 .2 .02" rgba="0 0 1 1" />
+
+                <site name="tendon 1 start" pos="0.2 0.2 0" type="sphere" size="0.01" />
+                <site name="tendon 2 start" pos="-0.2 -0.2 0" type="sphere" size="0.01" />
+                <site name="tendon 3 start" pos=" 0.2 -0.2 0" type="sphere" size="0.01" />
+                <site name="tendon 4 start" pos="-0.2  0.2 0" type="sphere" size="0.01" />
+
+                <!-- lower middle zylinder -->
+                <body name="lower middle zylinder" pos="0 0 .05" quat="1 0 0 0">
+                    <geom type="cylinder" size=".02 .05" rgba="0 0 1 0.5" />
+                    <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+
+                    <!-- center ball -->
+                    <body name="center ball" pos="0 0 .07" euler="0 0 0">
+
+                        <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+                        <geom type="sphere" size=".02 " rgba="1 0 0 .4" />
+                        <joint type="ball" pos="0 0 0" />
+
+                        <!-- upper middle zylinder -->
+                        <body name="upper middle zylinder" pos="0 0 .07" quat="1 0 0 0">
+
+
+                            <geom type="cylinder" size=".02 .05" rgba="0 0 1 0.5" />
+                            <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+
+                            <!-- upper plate -->
+                            <body name="upper plate" pos="0 0 .05" euler="0 0 0">
+                                <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+                                <geom type="box" size=".2 .2 .02" rgba="0 0 1 1" />
+
+
+                                <site name="tendon 1 end" pos="0.2 0.2 0" type="sphere" size="0.01" />
+                                <site name="tendon 2 end" pos="-0.2 -0.2 0" type="sphere" size="0.01" />
+                                <site name="tendon 3 end" pos="0.2 -0.2 0" type="sphere" size="0.01" />
+                                <site name="tendon 4 end" pos="-0.2 0.2 0" type="sphere" size="0.01" />
+
+                                <!-- upper zylinder -->
+                                <body name="upper zylinder" pos="0 0 .2" euler="0 0 0">
+
+                                    <geom type="cylinder" size=".05 .2" rgba="0 0 1 0.5" />
+                                    <inertial pos="0 0 0" mass="1" diaginertia=".01 .01 .01" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <!-- tendons -->
+    <tendon>
+        <spatial limited="true" range="0 0.5" width="0.005" stiffness="100" damping="100">
+            <site site="tendon 1 start" />
+            <site site="tendon 1 end" />
+        </spatial>
+
+        <spatial limited="true" range="0 0.5" width="0.005" stiffness="100" damping="100">
+            <site site="tendon 2 start" />
+            <site site="tendon 2 end" />
+        </spatial>
+
+        <spatial limited="true" range="0 0.5" width="0.005" stiffness="100" damping="100">
+            <site site="tendon 3 start" />
+            <site site="tendon 3 end" />
+        </spatial>
+
+        <spatial limited="true" range="0 0.5" width="0.005" stiffness="100" damping="100">
+            <site site="tendon 4 start" />
+            <site site="tendon 4 end" />
+        </spatial>
+
+    </tendon>
+
+</mujoco>

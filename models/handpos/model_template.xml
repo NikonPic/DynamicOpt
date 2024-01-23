@@ -1,0 +1,233 @@
+<mujoco model="hand model">
+    <compiler angle="radian" autolimits="true" meshdir="./assets/meshes" texturedir="assets" />
+    <option integrator="implicit" />
+
+    <asset>
+        <mesh file="Segmentation_ZF_DIP.stl" name="ZF-DIP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_ZF_PIP.stl" name="ZF-PIP1" scale="0.001 0.001 0.001" />
+        <mesh file="zf_mid2.stl" name="ZF-PIP2" scale="0.001 0.001 0.001" />
+        <mesh file="zf_mcp.stl" name="ZF-MCP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_Osmetacarpale_1.stl" name="DAU-MCP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_Phalax_proximalis.stl" name="DAU-PIP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_DIP.stl" name="DAU-DIP" scale="0.001 0.001 0.001" />
+        <mesh file="backhand.stl" name="BASE" scale="0.001 0.001 0.001" />
+        <mesh file="rest.stl" name="OTHER" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+
+        <body name="ZF_MCP" pos="0.17653044 -0.006212725 0.36246523" quat="0.94933915 0.2596205 0.1490058 -0.095653675">
+
+            <geom class="zf" mesh="ZF-MCP" type="mesh" />
+            <geom class="base" mesh="BASE" type="mesh" />
+            <geom class="other" mesh="OTHER" type="mesh" />
+
+
+            <body name="DAU_MCP" pos="-0.005199622 -0.017297987 0.012909057" quat="0.99637073 0.024422273 0.044029336 0.06863194">
+                <geom class="dau" mesh="DAU-MCP" type="mesh" />
+
+                <joint armature="0.001" axis="0.40624425 0.79109675 -0.4573091" limited="true" name="ZF_MCP_to_DAU_CMC" pos="0.061342776 -0.20078 -0.21655627" range="-1 1" type="hinge" />
+                <joint armature="0.001" axis="0.4939085 -0.7414759 -0.45416734" limited="true" name="DAU_CMC_to_DAU_MCP" pos="0.04987069 -0.20223475 -0.2211589" range="-0.2 1" type="hinge" />
+
+                <geom class="visual" fromto="0.04805550124843744 -0.19238199446143817 -0.21985343405518026 0.0573941754906135 -0.20632951579570052 -0.22831763493006785" name="DAU_CMC_to_DAU_MCP_wrap" rgba=".2 .2 .5 0.4" size="0.005639576189568419" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                <body name="DAU_PIP" pos="-0.004148971 0.0017358057 -0.004146285" quat="0.9982758 0.0092852125 -0.048376475 -0.031919748">
+                    <geom class="dau" mesh="DAU-PIP" type="mesh" />
+
+                    <joint armature="0.001" axis="0.40343243 -0.87510693 -0.26726407" limited="true" name="DAU_MCP_to_DAU_PIP" pos="0.06993682 -0.2063785 -0.18240458" range="-0.2 1" type="hinge" />
+
+                    <geom class="visual" fromto="0.06986512094763302 -0.19712958394871122 -0.1834363573043216 0.0756991302435826 -0.2099072573130287 -0.18728011035331105" name="DAU_MCP_to_DAU_PIP_wrap" rgba=".2 .2 .5 0.4" size="0.004368880116400853" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                    <body name="DAU_DIP" pos="-0.0043392414 -0.00036373967 -0.0020970246" quat="0.97443414 0.0650358 -0.18094432 -0.11622236">
+                        <geom class="dau" mesh="DAU-DIP" type="mesh" />
+
+                        <joint armature="0.001" axis="0.31670696 -0.8554678 -0.40972126" limited="true" name="DAU_PIP_to_DAU_DIP" pos="0.076113254 -0.21589163 -0.15284185" range="-0.2 1" type="hinge" />
+                        <geom class="visual" fromto="0.07790014026037166 -0.2076344419306508 -0.15010166202217595 0.08136620120527151 -0.21711547706315734 -0.15459563338289517" name="DAU_PIP_to_DAU_DIP_wrap" rgba=".2 .2 .5 0.4" size="0.003314957704461596" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                        <body name="DAU_TIP" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" />
+                        <site name="FPL-1" pos="{{FPL-1.x}} {{FPL-1.y}} {{FPL-1.z}}" type="sphere" size="0.0005" />
+                        <site name="EPL-1" pos="{{EPL-1.x}} {{EPL-1.y}} {{EPL-1.z}}" type="sphere" size="0.0005" />
+                    </body>
+                    <site name="EPL-2" pos="{{EPL-2.x}} {{EPL-2.y}} {{EPL-2.z}}" type="sphere" size="0.0005" />
+                    <site name="EPL-3" pos="{{EPL-3.x}} {{EPL-3.y}} {{EPL-3.z}}" type="sphere" size="0.0005" />
+                    <site name="EPB-1" pos="{{EPB-1.x}} {{EPB-1.y}} {{EPB-1.z}}" type="sphere" size="0.0005" />
+                    <site name="FPL-2" pos="{{FPL-2.x}} {{FPL-2.y}} {{FPL-2.z}}" type="sphere" size="0.0005" />
+                    <site name="FPL-3" pos="{{FPL-3.x}} {{FPL-3.y}} {{FPL-3.z}}" type="sphere" size="0.0005" />
+                </body>
+                <site name="EPB-2" pos="{{EPB-2.x}} {{EPB-2.y}} {{EPB-2.z}}" type="sphere" size="0.0005" />
+                <site name="EPB-3" pos="{{EPB-3.x}} {{EPB-3.y}} {{EPB-3.z}}" type="sphere" size="0.0005" />
+                <site name="FPL-4" pos="{{FPL-4.x}} {{FPL-4.y}} {{FPL-4.z}}" type="sphere" size="0.0005" />
+                <site name="APL-1" pos="{{APL-1.x}} {{APL-1.y}} {{APL-1.z}}" type="sphere" size="0.0005" />
+            </body>
+
+
+            <body name="ZF_PIP2" pos="-0.044088084 0.029136911 -0.060626954" quat="0.9849495 -0.1149586 -0.12714793 0.022189975">
+                <geom class="zf" mesh="ZF-PIP2" type="mesh" />
+
+                <joint armature="0.001" axis="0.8561206 0.51673424 -0.0065846182" limited="true" name="ZF_MCP_to_ZF_PIP2" pos="0.04534412 -0.17720978 -0.164988" range="-0.4 1" type="hinge" />
+                <geom class="visual" fromto="0.03721072156014954 -0.17743033520150522 -0.16781063045319158 0.04765875125672573 -0.1711701476345171 -0.16784691368050558" name="ZF_MCP_to_ZF_PIP2_wrap" rgba=".2 .2 .5 0.4" size="0.00365400233235141" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                <body name="ZF_PIP1" pos="0.03674525 -0.10101967 0.090618536" quat="0.9541883 0.26899368 0.12690394 0.032596633">
+                    <geom class="zf" mesh="ZF-PIP1" type="mesh" />
+
+                    <joint armature="0.001" axis="0.8596457 0.5105102 0.019712962" limited="true" name="ZF_PIP2_to_ZF_PIP1" pos="0.057444684 -0.19711661 -0.13231492" range="-0.4 1" type="hinge" />
+                    <geom class="visual" fromto="0.0506137946198933 -0.19660146361895323 -0.12952263052593088 0.058509631680056615 -0.1918699872528165 -0.12931447957120945" name="ZF_PIP2_to_ZF_PIP1_wrap" rgba=".2 .2 .5 0.4" size="0.002762191059168775" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                    <body name="ZF_DIP" pos="-0.0064898334 -0.016887512 0.02304126" quat="0.9983028 0.052609883 0.010451067 0.022681195">
+                        <geom class="zf" mesh="ZF-DIP" type="mesh" />
+
+                        <joint armature="0.001" axis="0.8656615 0.41676408 0.27737668" limited="true" name="ZF_PIP1_to_ZF_DIP" pos="0.05908115 -0.21096745 -0.123046406" range="-0.4 1" type="hinge" />
+                        <geom class="visual" fromto="0.058159880640969115 -0.21567762559074027 -0.12137500312694333 0.06578498830500523 -0.21204321287514633 -0.11896588872538726" name="ZF_PIP1_to_ZF_DIP_wrap" rgba=".2 .2 .5 0.4" size="0.0026351385046649513" type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                        <body name="ZF_TIP" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" />
+                        <site name="ED-1" pos="{{ED-1.x}} {{ED-1.y}} {{ED-1.z}}" type="sphere" size="0.0005" />
+                        <site name="FDP-1" pos="{{FDP-1.x}} {{FDP-1.y}} {{FDP-1.z}}" type="sphere" size="0.0005" />
+                    </body>
+                    <site name="ED-2" pos="{{ED-2.x}} {{ED-2.y}} {{ED-2.z}}" type="sphere" size="0.0005" />
+                    <site name="ED-3" pos="{{ED-3.x}} {{ED-3.y}} {{ED-3.z}}" type="sphere" size="0.0005" />
+                    <site name="FDP-2" pos="{{FDP-2.x}} {{FDP-2.y}} {{FDP-2.z}}" type="sphere" size="0.0005" />
+                    <site name="FDP-3" pos="{{FDP-3.x}} {{FDP-3.y}} {{FDP-3.z}}" type="sphere" size="0.0005" />
+                    <site name="EI-1" pos="{{EI-1.x}} {{EI-1.y}} {{EI-1.z}}" type="sphere" size="0.0005" />
+                    <site name="FDS-1" pos="{{FDS-1.x}} {{FDS-1.y}} {{FDS-1.z}}" type="sphere" size="0.0005" />
+                </body>
+                <site name="ED-4" pos="{{ED-4.x}} {{ED-4.y}} {{ED-4.z}}" type="sphere" size="0.0005" />
+                <site name="ED-5" pos="{{ED-5.x}} {{ED-5.y}} {{ED-5.z}}" type="sphere" size="0.0005" />
+                <site name="EI-2" pos="{{EI-2.x}} {{EI-2.y}} {{EI-2.z}}" type="sphere" size="0.0005" />
+                <site name="EI-3" pos="{{EI-3.x}} {{EI-3.y}} {{EI-3.z}}" type="sphere" size="0.0005" />
+                <site name="FDS-2" pos="{{FDS-2.x}} {{FDS-2.y}} {{FDS-2.z}}" type="sphere" size="0.0005" />
+                <site name="FDP-4" pos="{{FDP-4.x}} {{FDP-4.y}} {{FDP-4.z}}" type="sphere" size="0.0005" />
+                <site name="FDP-5" pos="{{FDP-5.x}} {{FDP-5.y}} {{FDP-5.z}}" type="sphere" size="0.0005" />
+                <site name="FDS-3" pos="{{FDS-3.x}} {{FDS-3.y}} {{FDS-3.z}}" type="sphere" size="0.0005" />
+            </body>
+            <site name="ED-6" pos="{{ED-6.x}} {{ED-6.y}} {{ED-6.z}}" type="sphere" size="0.0005" />
+            <site name="ED-7" pos="{{ED-7.x}} {{ED-7.y}} {{ED-7.z}}" type="sphere" size="0.0005" />
+            <site name="ED-8" pos="{{ED-8.x}} {{ED-8.y}} {{ED-8.z}}" type="sphere" size="0.0005" />
+            <site name="EI-4" pos="{{EI-4.x}} {{EI-4.y}} {{EI-4.z}}" type="sphere" size="0.0005" />
+            <site name="EI-5" pos="{{EI-5.x}} {{EI-5.y}} {{EI-5.z}}" type="sphere" size="0.0005" />
+            <site name="EI-6" pos="{{EI-6.x}} {{EI-6.y}} {{EI-6.z}}" type="sphere" size="0.0005" />
+            <site name="FDS-4" pos="{{FDS-4.x}} {{FDS-4.y}} {{FDS-4.z}}" type="sphere" size="0.0005" />
+            <site name="FDP-6" pos="{{FDP-6.x}} {{FDP-6.y}} {{FDP-6.z}}" type="sphere" size="0.0005" />
+            <site name="FDP-7" pos="{{FDP-7.x}} {{FDP-7.y}} {{FDP-7.z}}" type="sphere" size="0.0005" />
+            <site name="FDP-8" pos="{{FDP-8.x}} {{FDP-8.y}} {{FDP-8.z}}" type="sphere" size="0.0005" />
+            <site name="EPB-4" pos="{{EPB-4.x}} {{EPB-4.y}} {{EPB-4.z}}" type="sphere" size="0.0005" />
+            <site name="EPL-4" pos="{{EPL-4.x}} {{EPL-4.y}} {{EPL-4.z}}" type="sphere" size="0.0005" />
+            <site name="EPL-5" pos="{{EPL-5.x}} {{EPL-5.y}} {{EPL-5.z}}" type="sphere" size="0.0005" />
+            <site name="APL-2" pos="{{APL-2.x}} {{APL-2.y}} {{APL-2.z}}" type="sphere" size="0.0005" />
+            <site name="FPL-5" pos="{{FPL-5.x}} {{FPL-5.y}} {{FPL-5.z}}" type="sphere" size="0.0005" />
+            <site name="FPL-6" pos="{{FPL-6.x}} {{FPL-6.y}} {{FPL-6.z}}" type="sphere" size="0.0005" />
+            <site name="FDS-5" pos="{{FDS-5.x}} {{FDS-5.y}} {{FDS-5.z}}" type="sphere" size="0.0005" />
+        </body>
+
+
+        <camera name="camera0" pos="0.411 0.093 0.213"
+            xyaxes="-0.539 0.842 0.000 -0.231 -0.148 0.962" />
+
+    </worldbody>
+    <actuator>
+        <position name="FDP" tendon="FDP" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EPB" tendon="EPB" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="ED" tendon="ED" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="FDS" tendon="FDS" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EPL" tendon="EPL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="FPL" tendon="FPL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EI" tendon="EI" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="APL" tendon="APL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+    </actuator>
+    <tendon>
+        <spatial name="FDP" stiffness="{{FDP.stiffness}}" damping="{{FDP.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="FDP-1" />
+            <geom geom="ZF_PIP1_to_ZF_DIP_wrap" />
+            <site site="FDP-2" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDP-3" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDP-4" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDP-5" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDP-6" />
+            <site site="FDP-7" />
+            <site site="FDP-8" />
+        </spatial>
+        <spatial name="EPB" stiffness="{{EPB.stiffness}}" damping="{{EPB.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="EPB-1" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPB-2" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="EPB-3" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="EPB-4" />
+        </spatial>
+        <spatial name="ED" stiffness="{{ED.stiffness}}" damping="{{ED.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="ED-1" />
+            <geom geom="ZF_PIP1_to_ZF_DIP_wrap" />
+            <site site="ED-2" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="ED-3" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="ED-4" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="ED-5" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="ED-6" />
+            <site site="ED-7" />
+            <site site="ED-8" />
+        </spatial>
+        <spatial name="FDS" stiffness="{{FDS.stiffness}}" damping="{{FDS.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="FDS-1" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDS-2" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDS-3" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDS-4" />
+            <site site="FDS-5" />
+        </spatial>
+        <spatial name="EPL" stiffness="{{EPL.stiffness}}" damping="{{EPL.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="EPL-1" />
+            <geom geom="DAU_PIP_to_DAU_DIP_wrap" />
+            <site site="EPL-2" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPL-3" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPL-4" />
+            <site site="EPL-5" />
+        </spatial>
+        <spatial name="FPL" stiffness="{{FPL.stiffness}}" damping="{{FPL.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="FPL-1" />
+            <geom geom="DAU_PIP_to_DAU_DIP_wrap" />
+            <site site="FPL-2" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="FPL-3" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="FPL-4" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="FPL-5" />
+            <site site="FPL-6" />
+        </spatial>
+        <spatial name="EI" stiffness="{{EI.stiffness}}" damping="{{EI.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="EI-1" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="EI-2" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="EI-3" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="EI-4" />
+            <site site="EI-5" />
+            <site site="EI-6" />
+        </spatial>
+        <spatial name="APL" stiffness="{{APL.stiffness}}" damping="{{APL.damping}}" width="0.0005"
+            rgba="0.9 0.2 0.2 0.3">
+            <site site="APL-1" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="APL-2" />
+        </spatial>
+    </tendon>
+</mujoco>

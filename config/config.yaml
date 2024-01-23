@@ -1,0 +1,81 @@
+# select environment by applying 'disk' or 'knee'
+defaults:
+  - env: handpos
+  - _self_
+
+# actor details
+actor:
+  use_std: False
+  lr: 5.0e-6
+  width: 48
+  reinforce: True
+  max_grad_norm: 0.1
+
+# critic details
+critic:
+  lr: 1.0e-4
+  width: 384
+  hidden_dims:
+    - 256
+    - 256
+    - 128
+
+# general worker setup
+general:
+  num_workers: 5
+  num_trainers: 2
+  epochs: 10000
+  cuda_device: 0
+  seed: 50
+
+# all parameters used for ppo training
+ppo:
+  gamma: 0.99
+  lam: 0.95
+  batch_size: 2000
+  steps_per_epoch: 100000
+  nb_optim_iters: 4
+  clip_ratio: 0.2
+
+# all parameters used for sac training
+sac:
+  gamma: 0.99
+  tau: 0.001
+  learn_alpha: False
+  alpha_init: 0.1
+  alpha_lr: 5.0e-4
+  batch_size: 64
+  steps_per_epoch: 100
+  memory_size: 2000000
+  nb_optim_iters: 4
+  nb_batch_ids: 2000
+  cql_weight: 1.0
+  critic_dropout_rate: 0.1
+
+simple:
+  batch_size: 64
+  clip_ratio: 0.2
+  steps_per_epoch: 128
+  nb_optim_iters: 1
+  nb_batch_ids: 2000
+  memory_size: 64000
+
+# the measurement dataset options
+measure_dataset:
+  train_percentage: 99
+  shuffle: True
+  measure_path: ./measurement
+  filter_oscillations: false
+  use_start_only: true
+  filter_apps:
+    - 25
+  filter_tste:
+    - 7190
+    - 12990
+  start_pos: 500
+
+# logging
+log:
+  param_intervall: 10
+  figure_intervall: 100
+  param_save_intervall: 100

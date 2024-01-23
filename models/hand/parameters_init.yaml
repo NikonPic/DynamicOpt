@@ -1,0 +1,24 @@
+APL:
+  damping: '2000'
+  stiffness: '1000.0'
+ED:
+  damping: '2000'
+  stiffness: '1000.0'
+EI:
+  damping: '2000'
+  stiffness: '1000.0'
+EPB:
+  damping: '2000'
+  stiffness: '1000.0'
+EPL:
+  damping: '2000'
+  stiffness: '1000.0'
+FDP:
+  damping: '2000'
+  stiffness: '1000.0'
+FDS:
+  damping: '2000'
+  stiffness: '1000.0'
+FPL:
+  damping: '2000'
+  stiffness: '1000.0'

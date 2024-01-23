@@ -1,0 +1,16 @@
+tendon1:
+  damping: '200'
+  stiffness: '200.0'
+  springlength: '0.02'
+tendon2:
+  damping: '200'
+  stiffness: '200.0'
+  springlength: '0.02'
+tendon3:
+  damping: '200'
+  stiffness: '200.0'
+  springlength: '0.02'
+tendon4:
+  damping: '200'
+  stiffness: '200.0'
+  springlength: '0.02'

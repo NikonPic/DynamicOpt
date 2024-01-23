@@ -1,0 +1,32 @@
+HKB:
+  damping: '300'
+  stiffness: '3000.0'
+LCL:
+  damping: '300'
+  stiffness: '3000.0'
+LP:
+  damping: '300'
+  stiffness: '3000.0'
+POL:
+  damping: '300'
+  stiffness: '3000.0'
+PS:
+  damping: '300'
+  stiffness: '3000.0'
+VKB:
+  damping: '300'
+  stiffness: '3000.0'
+dMCL:
+  damping: '300'
+  stiffness: '3000.0'
+sMCL:
+  damping: '300'
+  stiffness: '3000.0'
+tibia:
+  dqw: '0.0'
+  dqx: '0.0'
+  dqy: '0.0'
+  dqz: '0.0'
+  dx: '0.0'
+  dy: '0.0'
+  dz: '0.0'

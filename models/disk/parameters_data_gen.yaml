@@ -1,0 +1,13 @@
+tendon1:
+  damping: '150'
+  stiffness: '220.0'
+tendon2:
+  damping: '230'
+  stiffness: '140.0'
+tendon3:
+  damping: '250'
+  stiffness: '250.0'
+tendon4:
+  damping: '210'
+  stiffness: '160.0'
+

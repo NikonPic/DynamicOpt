@@ -1,0 +1,13 @@
+model_type: disk
+path_ext: ./models/disklen/
+scene_path: ./models/disklen/scene.xml
+param_path: ./models/disklen
+param_file: parameters_init.yaml
+param_data_gen_file: parameters_data_gen.yaml
+crit_speed: 20
+max_episode_len: 1000
+ft_input_len: 6
+freq: 100
+apply_ft_body_id: 4
+lam_reward: 20
+data_path: data_disk_random

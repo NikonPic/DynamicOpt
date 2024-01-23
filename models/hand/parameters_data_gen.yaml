@@ -1,0 +1,24 @@
+APL:
+  damping: '150'
+  stiffness: '220.0'
+EI:
+  damping: '230'
+  stiffness: '140.0'
+FPL:
+  damping: '250'
+  stiffness: '250.0'
+EPL:
+  damping: '219'
+  stiffness: '160.0'
+FDS:
+  damping: '250'
+  stiffness: '120.0'
+ED:
+  damping: '260'
+  stiffness: '200.0'
+EPB:
+  damping: '180'
+  stiffness: '170.0'
+FDP:
+  damping: '220'
+  stiffness: '160.0'

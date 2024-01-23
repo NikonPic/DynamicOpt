@@ -1,0 +1,32 @@
+HKB:
+  damping: '230'
+  stiffness: '2000.0'
+LCL:
+  damping: '210'
+  stiffness: '2500.0'
+LP:
+  damping: '220'
+  stiffness: '1800.0'
+POL:
+  damping: '230'
+  stiffness: '1400.0'
+PS:
+  damping: '130'
+  stiffness: '1200.0'
+VKB:
+  damping: '140'
+  stiffness: '1600.0'
+dMCL:
+  damping: '190'
+  stiffness: '1800.0'
+sMCL:
+  damping: '230'
+  stiffness: '2400.0'
+tibia:
+  dqw: '0.05'
+  dqx: '0.01'
+  dqy: '0.03'
+  dqz: '0.02'
+  dx: '0.03'
+  dy: '0.01'
+  dz: '0.04'

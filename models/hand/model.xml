@@ -1,0 +1,342 @@
+<mujoco model="hand model">
+    <compiler angle="radian" autolimits="true" meshdir="./assets/meshes" texturedir="assets" />
+    <option integrator="implicit" />
+
+    <asset>
+        <mesh file="Segmentation_ZF_DIP.stl" name="ZF-DIP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_ZF_PIP.stl" name="ZF-PIP1" scale="0.001 0.001 0.001" />
+        <mesh file="zf_mid2.stl" name="ZF-PIP2" scale="0.001 0.001 0.001" />
+        <mesh file="zf_mcp.stl" name="ZF-MCP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_Osmetacarpale_1.stl" name="DAU-MCP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_Phalax_proximalis.stl" name="DAU-PIP" scale="0.001 0.001 0.001" />
+        <mesh file="Segmentation_DAU_DIP.stl" name="DAU-DIP" scale="0.001 0.001 0.001" />
+        <mesh file="backhand.stl" name="BASE" scale="0.001 0.001 0.001" />
+        <mesh file="rest.stl" name="OTHER" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+
+
+        <body name="ZF_MCP" pos="0.17653044 -0.006212725 0.36246523"
+            quat="0.94933915 0.2596205 0.1490058 -0.095653675">
+
+            <geom class="zf" mesh="ZF-MCP" type="mesh" />
+            <geom class="base" mesh="BASE" type="mesh" />
+            <geom class="other" mesh="OTHER" type="mesh" />
+
+
+            <body name="DAU_MCP" pos="-0.005199622 -0.017297987 0.012909057"
+                quat="0.99637073 0.024422273 0.044029336 0.06863194">
+                <geom class="dau" mesh="DAU-MCP" type="mesh" />
+
+                <joint armature="0.001" axis="0.40624425 0.79109675 -0.4573091" limited="true"
+                    name="ZF_MCP_to_DAU_CMC" pos="0.061342776 -0.20078 -0.21655627" range="-1 1"
+                    type="hinge" />
+                <joint armature="0.001" axis="0.4939085 -0.7414759 -0.45416734" limited="true"
+                    name="DAU_CMC_to_DAU_MCP" pos="0.04987069 -0.20223475 -0.2211589" range="-0.2 1"
+                    type="hinge" />
+
+                <geom class="visual"
+                    fromto="0.04805550124843744 -0.19238199446143817 -0.21985343405518026 0.0573941754906135 -0.20632951579570052 -0.22831763493006785"
+                    name="DAU_CMC_to_DAU_MCP_wrap" rgba=".2 .2 .5 0.4" size="0.005639576189568419"
+                    type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                <body name="DAU_PIP" pos="-0.004148971 0.0017358057 -0.004146285"
+                    quat="0.9982758 0.0092852125 -0.048376475 -0.031919748">
+                    <geom class="dau" mesh="DAU-PIP" type="mesh" />
+
+                    <joint armature="0.001" axis="0.40343243 -0.87510693 -0.26726407" limited="true"
+                        name="DAU_MCP_to_DAU_PIP" pos="0.06993682 -0.2063785 -0.18240458"
+                        range="-0.2 1" type="hinge" />
+
+                    <geom class="visual"
+                        fromto="0.06986512094763302 -0.19712958394871122 -0.1834363573043216 0.0756991302435826 -0.2099072573130287 -0.18728011035331105"
+                        name="DAU_MCP_to_DAU_PIP_wrap" rgba=".2 .2 .5 0.4"
+                        size="0.004368880116400853" type="cylinder" density="0" contype="0"
+                        conaffinity="0" />
+
+                    <body name="DAU_DIP" pos="-0.0043392414 -0.00036373967 -0.0020970246"
+                        quat="0.97443414 0.0650358 -0.18094432 -0.11622236">
+                        <geom class="dau" mesh="DAU-DIP" type="mesh" />
+
+                        <joint armature="0.001" axis="0.31670696 -0.8554678 -0.40972126"
+                            limited="true" name="DAU_PIP_to_DAU_DIP"
+                            pos="0.076113254 -0.21589163 -0.15284185" range="-0.2 1" type="hinge" />
+                        <geom class="visual"
+                            fromto="0.07790014026037166 -0.2076344419306508 -0.15010166202217595 0.08136620120527151 -0.21711547706315734 -0.15459563338289517"
+                            name="DAU_PIP_to_DAU_DIP_wrap" rgba=".2 .2 .5 0.4"
+                            size="0.003314957704461596" type="cylinder" density="0" contype="0"
+                            conaffinity="0" />
+
+                        <body name="DAU_TIP" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" />
+                        <site name="FPL-1"
+                            pos="0.07617986335228798 -0.2164349065612825 -0.14549392680675224"
+                            type="sphere" size="0.0005" />
+                        <site name="EPL-1"
+                            pos="0.08278454435532315 -0.2128481996245333 -0.1451938607295752"
+                            type="sphere" size="0.0005" />
+                    </body>
+                    <site name="EPL-2"
+                        pos="0.08224218866195501 -0.20837251280284236 -0.1535216694360387"
+                        type="sphere" size="0.0005" />
+                    <site name="EPL-3"
+                        pos="0.07222064685788276 -0.1999198568883619 -0.17396908771381936"
+                        type="sphere" size="0.0005" />
+                    <site name="EPB-1"
+                        pos="0.07847651865637922 -0.20413769959702835 -0.17347872119119845"
+                        type="sphere" size="0.0005" />
+                    <site name="FPL-2"
+                        pos="0.0760290359377246 -0.21216055303307393 -0.15563567738304457"
+                        type="sphere" size="0.0005" />
+                    <site name="FPL-3"
+                        pos="0.07029319124008324 -0.20946988827796797 -0.17189978841948889"
+                        type="sphere" size="0.0005" />
+                </body>
+                <site name="EPB-2"
+                    pos="0.07592438175162022 -0.20122150199685507 -0.1850281625625945" type="sphere"
+                    size="0.0005" />
+                <site name="EPB-3"
+                    pos="0.060477917702416506 -0.19374199844932818 -0.21688536585851254"
+                    type="sphere" size="0.0005" />
+                <site name="FPL-4"
+                    pos="0.06711087146248366 -0.20587478164234602 -0.18830641725242808"
+                    type="sphere" size="0.0005" />
+                <site name="APL-1"
+                    pos="0.06271704076437273 -0.1977000442553416 -0.22016046175468032" type="sphere"
+                    size="0.0005" />
+            </body>
+
+
+            <body name="ZF_PIP2" pos="-0.044088084 0.029136911 -0.060626954"
+                quat="0.9849495 -0.1149586 -0.12714793 0.022189975">
+                <geom class="zf" mesh="ZF-PIP2" type="mesh" />
+
+                <joint armature="0.001" axis="0.8561206 0.51673424 -0.0065846182" limited="true"
+                    name="ZF_MCP_to_ZF_PIP2" pos="0.04534412 -0.17720978 -0.164988" range="-0.4 1"
+                    type="hinge" />
+                <geom class="visual"
+                    fromto="0.03721072156014954 -0.17743033520150522 -0.16781063045319158 0.04765875125672573 -0.1711701476345171 -0.16784691368050558"
+                    name="ZF_MCP_to_ZF_PIP2_wrap" rgba=".2 .2 .5 0.4" size="0.00365400233235141"
+                    type="cylinder" density="0" contype="0" conaffinity="0" />
+
+                <body name="ZF_PIP1" pos="0.03674525 -0.10101967 0.090618536"
+                    quat="0.9541883 0.26899368 0.12690394 0.032596633">
+                    <geom class="zf" mesh="ZF-PIP1" type="mesh" />
+
+                    <joint armature="0.001" axis="0.8596457 0.5105102 0.019712962" limited="true"
+                        name="ZF_PIP2_to_ZF_PIP1" pos="0.057444684 -0.19711661 -0.13231492"
+                        range="-0.4 1" type="hinge" />
+                    <geom class="visual"
+                        fromto="0.0506137946198933 -0.19660146361895323 -0.12952263052593088 0.058509631680056615 -0.1918699872528165 -0.12931447957120945"
+                        name="ZF_PIP2_to_ZF_PIP1_wrap" rgba=".2 .2 .5 0.4"
+                        size="0.002762191059168775" type="cylinder" density="0" contype="0"
+                        conaffinity="0" />
+
+                    <body name="ZF_DIP" pos="-0.0064898334 -0.016887512 0.02304126"
+                        quat="0.9983028 0.052609883 0.010451067 0.022681195">
+                        <geom class="zf" mesh="ZF-DIP" type="mesh" />
+
+                        <joint armature="0.001" axis="0.8656615 0.41676408 0.27737668"
+                            limited="true" name="ZF_PIP1_to_ZF_DIP"
+                            pos="0.05908115 -0.21096745 -0.123046406" range="-0.4 1" type="hinge" />
+                        <geom class="visual"
+                            fromto="0.058159880640969115 -0.21567762559074027 -0.12137500312694333 0.06578498830500523 -0.21204321287514633 -0.11896588872538726"
+                            name="ZF_PIP1_to_ZF_DIP_wrap" rgba=".2 .2 .5 0.4"
+                            size="0.0026351385046649513" type="cylinder" density="0" contype="0"
+                            conaffinity="0" />
+
+                        <body name="ZF_TIP" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" />
+                        <site name="ED-1"
+                            pos="0.06345094768734885 -0.218327969948429 -0.11391111976488638"
+                            type="sphere" size="0.0005" />
+                        <site name="FDP-1"
+                            pos="0.06432809657963354 -0.21958941627941314 -0.12052502992735097"
+                            type="sphere" size="0.0005" />
+                    </body>
+                    <site name="ED-2"
+                        pos="0.06038826107850061 -0.21250561966377626 -0.11736054732022588"
+                        type="sphere" size="0.0005" />
+                    <site name="ED-3"
+                        pos="0.05471142759653134 -0.19707721985011575 -0.12131885210865372"
+                        type="sphere" size="0.0005" />
+                    <site name="FDP-2"
+                        pos="0.061807446257681316 -0.21267466607793398 -0.12254198149482397"
+                        type="sphere" size="0.0005" />
+                    <site name="FDP-3"
+                        pos="0.05761489709455216 -0.2020984636701569 -0.1270854409206569"
+                        type="sphere" size="0.0005" />
+                    <site name="EI-1"
+                        pos="0.05573732126240647 -0.1973502605018254 -0.12135900273168795"
+                        type="sphere" size="0.0005" />
+                    <site name="FDS-1"
+                        pos="0.05787033711811481 -0.2039381208446886 -0.12468581669061948"
+                        type="sphere" size="0.0005" />
+                </body>
+                <site name="ED-4" pos="0.05244191360473633 -0.190090072631836 -0.1292928497314453"
+                    type="sphere" size="0.0005" />
+                <site name="ED-5" pos="0.0443320541381836 -0.1725892333984375 -0.15278924865722657"
+                    type="sphere" size="0.0005" />
+                <site name="EI-2"
+                    pos="0.05301815032958984 -0.19127139282226563 -0.12737398834228517"
+                    type="sphere" size="0.0005" />
+                <site name="EI-3" pos="0.04377632522583008 -0.17302584838867188 -0.1525018341064453"
+                    type="sphere" size="0.0005" />
+                <site name="FDS-2"
+                    pos="0.053851776123046875 -0.1911654510498047 -0.13596832580566406"
+                    type="sphere" size="0.0005" />
+                <site name="FDP-4"
+                    pos="0.05540545654296875 -0.19265214538574219 -0.13388643188476562"
+                    type="sphere" size="0.0005" />
+                <site name="FDP-5"
+                    pos="0.046552120208740236 -0.18246701049804687 -0.15747040100097656"
+                    type="sphere" size="0.0005" />
+                <site name="FDS-3"
+                    pos="0.048047260284423826 -0.1837753448486328 -0.15370108337402344"
+                    type="sphere" size="0.0005" />
+            </body>
+            <site name="ED-6" pos="0.04068317413330078 -0.1683495330810547 -0.16356614990234375"
+                type="sphere" size="0.0005" />
+            <site name="ED-7" pos="0.02870635032653809 -0.1841443328857422 -0.21635090942382812"
+                type="sphere" size="0.0005" />
+            <site name="ED-8" pos="0.032556884765625 -0.21127896118164066 -0.2505441009521484"
+                type="sphere" size="0.0005" />
+            <site name="EI-4" pos="0.0404731674194336 -0.16725772094726565 -0.16589578552246095"
+                type="sphere" size="0.0005" />
+            <site name="EI-5" pos="0.028191236495971682 -0.1843002166748047 -0.2169537841796875"
+                type="sphere" size="0.0005" />
+            <site name="EI-6" pos="0.03293711471557617 -0.21202293395996097 -0.24852492065429688"
+                type="sphere" size="0.0005" />
+            <site name="FDS-4" pos="0.04311767196655274 -0.1799432830810547 -0.17614850158691406"
+                type="sphere" size="0.0005" />
+            <site name="FDP-6" pos="0.04354349517822266 -0.17979544067382813 -0.1719917785644531"
+                type="sphere" size="0.0005" />
+            <site name="FDP-7" pos="0.0329781494140625 -0.20735281372070313 -0.22346496887207032"
+                type="sphere" size="0.0005" />
+            <site name="FDP-8" pos="0.03201940536499023 -0.21800865173339845 -0.24317700500488282"
+                type="sphere" size="0.0005" />
+            <site name="EPB-4" pos="0.03757329177856445 -0.20120518493652345 -0.24805575866699217"
+                type="sphere" size="0.0005" />
+            <site name="EPL-4" pos="0.041398563385009766 -0.18813050842285156 -0.2281511871337891"
+                type="sphere" size="0.0005" />
+            <site name="EPL-5" pos="0.04651138687133789 -0.20301907348632814 -0.24295352478027343"
+                type="sphere" size="0.0005" />
+            <site name="APL-2" pos="0.0483392333984375 -0.20248985290527344 -0.24085289306640625"
+                type="sphere" size="0.0005" />
+            <site name="FPL-5" pos="0.040508323669433605 -0.20416598510742187 -0.22414621276855468"
+                type="sphere" size="0.0005" />
+            <site name="FPL-6" pos="0.04095455169677734 -0.21076040649414066 -0.2438369171142578"
+                type="sphere" size="0.0005" />
+            <site name="FDS-5" pos="0.039476860046386716 -0.19787861633300782 -0.21464696044921874"
+                type="sphere" size="0.0005" />
+        </body>
+
+        <camera name="camera0" pos="0.411 0.093 0.213"
+            xyaxes="-0.539 0.842 0.000 -0.231 -0.148 0.962" />
+        <camera name="camera0." pos="0.375 0.069 0.146"
+            xyaxes="-0.581 0.814 0.000 -0.114 -0.081 0.990" />
+        <camera name="camera1" pos="0.461 0.120 0.252"
+            xyaxes="-0.593 0.805 -0.000 -0.358 -0.264 0.896" />
+        <camera name="camera2" pos="0.617 -0.002 0.149"
+            xyaxes="-0.249 0.968 0.000 0.018 0.005 1.000" />
+
+    </worldbody>
+    <actuator>
+        <position name="FDP" tendon="FDP" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EPB" tendon="EPB" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="ED" tendon="ED" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="FDS" tendon="FDS" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EPL" tendon="EPL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="FPL" tendon="FPL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="EI" tendon="EI" ctrllimited="false" ctrlrange="0 10" kp="10" />
+        <position name="APL" tendon="APL" ctrllimited="false" ctrlrange="0 10" kp="10" />
+    </actuator>
+    <tendon>
+        <spatial name="FDP" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="FDP-1" />
+            <geom geom="ZF_PIP1_to_ZF_DIP_wrap" />
+            <site site="FDP-2" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDP-3" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDP-4" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDP-5" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDP-6" />
+            <site site="FDP-7" />
+            <site site="FDP-8" />
+        </spatial>
+        <spatial name="EPB" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="EPB-1" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPB-2" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="EPB-3" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="EPB-4" />
+        </spatial>
+        <spatial name="ED" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="ED-1" />
+            <geom geom="ZF_PIP1_to_ZF_DIP_wrap" />
+            <site site="ED-2" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="ED-3" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="ED-4" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="ED-5" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="ED-6" />
+            <site site="ED-7" />
+            <site site="ED-8" />
+        </spatial>
+        <spatial name="FDS" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="FDS-1" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="FDS-2" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDS-3" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="FDS-4" />
+            <site site="FDS-5" />
+        </spatial>
+        <spatial name="EPL" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="EPL-1" />
+            <geom geom="DAU_PIP_to_DAU_DIP_wrap" />
+            <site site="EPL-2" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPL-3" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="EPL-4" />
+            <site site="EPL-5" />
+        </spatial>
+        <spatial name="FPL" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="FPL-1" />
+            <geom geom="DAU_PIP_to_DAU_DIP_wrap" />
+            <site site="FPL-2" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="FPL-3" />
+            <geom geom="DAU_MCP_to_DAU_PIP_wrap" />
+            <site site="FPL-4" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="FPL-5" />
+            <site site="FPL-6" />
+        </spatial>
+        <spatial name="EI" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="EI-1" />
+            <geom geom="ZF_PIP2_to_ZF_PIP1_wrap" />
+            <site site="EI-2" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="EI-3" />
+            <geom geom="ZF_MCP_to_ZF_PIP2_wrap" />
+            <site site="EI-4" />
+            <site site="EI-5" />
+            <site site="EI-6" />
+        </spatial>
+        <spatial name="APL" stiffness="1000.0" damping="200" width="0.0005" rgba="0.9 0.2 0.2 0.3">
+            <site site="APL-1" />
+            <geom geom="DAU_CMC_to_DAU_MCP_wrap" />
+            <site site="APL-2" />
+        </spatial>
+    </tendon>
+</mujoco>
