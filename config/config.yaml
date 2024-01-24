@@ -6,7 +6,7 @@ defaults:
 # actor details
 actor:
   use_std: False
-  lr: 5.0e-6
+  lr: 0
   width: 48
   reinforce: True
   max_grad_norm: 0.1
@@ -43,7 +43,7 @@ sac:
   tau: 0.001
   learn_alpha: False
   alpha_init: 0.1
-  alpha_lr: 5.0e-4
+  alpha_lr: 0
   batch_size: 64
   steps_per_epoch: 100
   memory_size: 2000000
