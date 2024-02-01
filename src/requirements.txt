@@ -1,0 +1,16 @@
+mujoco==2.3.3
+tqdm
+rich
+numpy
+pandas
+scipy
+matplotlib
+torch
+dm_control
+pystache
+pyquaternion
+elementpath
+mujoco
+mujoco_python_viewer
+hydra-core
+iphyton

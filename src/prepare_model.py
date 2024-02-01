@@ -26,8 +26,8 @@ STIFFNESS = 2000
 
 names = ['femur', 'tibia', 'fibula', 'patella']
 
-FILENAME = '../knee_model.xml'
-TEMPLATE_NAME = '../knee_model_template.xml'
+FILENAME = 'models\knee\knee_model.xml'
+TEMPLATE_NAME = 'models/knee/knee_model_template.xml'
 
 # root names
 WORLDBODY = 'worldbody'
@@ -203,7 +203,7 @@ def recursive_zyl(elem, name, mesh_name, p1, p2):
         recursive_zyl(loc_elem, name, mesh_name, p1, p2)
 
 
-def load_tendons(root, tendon_path='../assets/tendons'):
+def load_tendons(root, tendon_path='assets/tendons'):
     """Loads tendon data from JSON files and adds them to the model."""
     names = ['femur', 'tibia']
 
@@ -214,7 +214,7 @@ def load_tendons(root, tendon_path='../assets/tendons'):
 
     yaml_dict = {}
 
-    zyl_path = '../assets/wrap'
+    zyl_path = 'assets/wrap'
     wrap_files = os.listdir(zyl_path)
     wrapped_files = [wrap_file.split('.')[0].split('_')[0]
                      for wrap_file in wrap_files]
@@ -328,7 +328,7 @@ def load_tendons(root, tendon_path='../assets/tendons'):
         'dqz': '0.0',
     }
 
-    with open('../params/parameters_init.yaml', 'w') as f:
+    with open('params/parameters_init.yaml', 'w') as f:
         yaml.dump(yaml_dict, f)
 
 
