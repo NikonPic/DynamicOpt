@@ -37,12 +37,12 @@ import imageio
 from pyvirtualdisplay import Display
 
 
-display = Display(visible=0, size=(1080, 1080))
+display = Display(visible=0, size=(640, 640))
 display.start()
 
 
 TIME_LABEL = 'time in s'
-SCENE = '../scene.xml'
+SCENE = 'scene.xml'
 LEGEND_LOC = 'lower right'
 
 

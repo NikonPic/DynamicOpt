@@ -54,15 +54,9 @@
         <body name="tibia" pos="0.0 0.0 1.6" quat="1 0 0 0">
             <geom class="visual" euler="0 0 0" mesh="tibia mesh" pos="0 0 0" type="mesh" />
             <geom class="tracker" euler="0 0 0" mesh="tibia tracker mesh" pos="0 0 0" type="mesh" />
-            <inertial
-                fullinertia="0.0008780700528212282 0.000882003973073614 0.00018810237832225102 -2.0773214139677317e-05 -0.00017248916504192767 -0.00011027907295235728"
-                mass="0.4452526927806469"
-                pos="0.035537882962384665 0.1738143285325765 -0.42422270065004697" />
+            <inertial fullinertia="0.0008780700528212282 0.000882003973073614 0.00018810237832225102 -2.0773214139677317e-05 -0.00017248916504192767 -0.00011027907295235728" mass="0.4452526927806469" pos="0.035537882962384665 0.1738143285325765 -0.42422270065004697" />
             <body euler="0 0 0" name="fibula" pos="0 0 0">
-                <inertial
-                    fullinertia="6.414713658940696e-05 6.720841419660586e-05 5.044916367991743e-06 8.273971128515786e-07 -1.4502261752779585e-05 3.717336306071836e-06"
-                    mass="0.03620870310593307"
-                    pos="0.008065118114846828 0.21070770784463308 -0.4292249651398537" />
+                <inertial fullinertia="6.414713658940696e-05 6.720841419660586e-05 5.044916367991743e-06 8.273971128515786e-07 -1.4502261752779585e-05 3.717336306071836e-06" mass="0.03620870310593307" pos="0.008065118114846828 0.21070770784463308 -0.4292249651398537" />
                 <geom class="visual" euler="0 0 0" mesh="fibula mesh" pos="0 0 0" type="mesh" />
                 <geom class="collision" mesh="fibula_0" name="fibula_0" type="mesh" />
                 <geom class="collision" mesh="fibula_1" name="fibula_1" type="mesh" />
@@ -80,20 +74,13 @@
                 <geom class="collision" mesh="fibula_13" name="fibula_13" type="mesh" />
                 <geom class="collision" mesh="fibula_14" name="fibula_14" type="mesh" />
             </body>
-            <site name="dMCL_end" pos="{{dMCL.pos_end.x}} {{dMCL.pos_end.y}} {{dMCL.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="HKB_end" pos="{{HKB.pos_end.x}} {{HKB.pos_end.y}} {{HKB.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="LCL_end" pos="{{LCL.pos_end.x}} {{LCL.pos_end.y}} {{LCL.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="POL_end" pos="{{POL.pos_end.x}} {{POL.pos_end.y}} {{POL.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="PS_end" pos="{{PS.pos_end.x}} {{PS.pos_end.y}} {{PS.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="sMCL_end" pos="{{sMCL.pos_end.x}} {{sMCL.pos_end.y}} {{sMCL.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <site name="VKB_end" pos="{{VKB.pos_end.x}} {{VKB.pos_end.y}} {{VKB.pos_end.z}}"
-                size="0.001" type="sphere" />
+            <site name="dMCL_end" pos="0.03582199096679688 0.13370420837402344 -0.37326898193359376" size="0.001" type="sphere" />
+            <site name="HKB_end" pos="0.017896549224853515 0.17780065917968751 -0.36857818603515624" size="0.001" type="sphere" />
+            <site name="LCL_end" pos="0.019021478652954102 0.2215125274658203 -0.390551513671875" size="0.001" type="sphere" />
+            <site name="POL_end" pos="0.024396358489990236 0.13385227966308594 -0.37165481567382813" size="0.001" type="sphere" />
+            <site name="PS_end" pos="0.015489018440246582 0.16296687316894531 -0.3892603149414063" size="0.001" type="sphere" />
+            <site name="sMCL_end" pos="0.03592108917236328 0.13487907409667968 -0.3777944641113281" size="0.001" type="sphere" />
+            <site name="VKB_end" pos="0.04289450454711914 0.17654144287109375 -0.36209667968750003" size="0.001" type="sphere" />
             <geom class="collision" mesh="tibia_0" name="tibia_0" type="mesh" />
             <geom class="collision" mesh="tibia_1" name="tibia_1" type="mesh" />
             <geom class="collision" mesh="tibia_2" name="tibia_2" type="mesh" />
@@ -107,46 +94,28 @@
             <geom class="collision" mesh="tibia_10" name="tibia_10" type="mesh" />
             <geom class="collision" mesh="tibia_11" name="tibia_11" type="mesh" />
             <geom class="collision" mesh="tibia_12" name="tibia_12" type="mesh" />
-            <site name="LP_end" pos="{{LP.pos_end.x}} {{LP.pos_end.y}} {{LP.pos_end.z}}"
-                size="0.001" type="sphere" />
-            <geom class="visual"
-                fromto="0.048301631927490235 0.21166104125976562 -0.3733244934082031 0.04652249145507813 0.13440820312500001 -0.3769089660644531"
-                name="PS_wrap" rgba=".2 .2 .5 0.0" size="0.025" type="cylinder" />
+            <site name="LP_end" pos="0.07079630279541016 0.18260380554199218 -0.40183831787109375" size="0.001" type="sphere" />
+            <geom class="visual" fromto="0.048301631927490235 0.21166104125976562 -0.3733244934082031 0.04652249145507813 0.13440820312500001 -0.3769089660644531" name="PS_wrap" rgba=".2 .2 .5 0.0" size="0.025" type="cylinder" />
         </body>
         <body name="femur" pos="0.0 0.0 1.6" quat="1 0 0 0">
             <joint type="free" />
-            <inertial
-                fullinertia="0.0014471221093789871 0.0013713473639596421 0.00026087716802195016 7.836769453642076e-08 0.00014400130245007057 -4.208930881634612e-05"
-                mass="0.5077506167421568"
-                pos="0.04206533826380333 0.17074902085470534 -0.2976383647493416" />
+            <inertial fullinertia="0.0014471221093789871 0.0013713473639596421 0.00026087716802195016 7.836769453642076e-08 0.00014400130245007057 -4.208930881634612e-05" mass="0.5077506167421568" pos="0.04206533826380333 0.17074902085470534 -0.2976383647493416" />
             <geom class="visual" euler="0 0 0" mesh="femur mesh" pos="0 0 0" type="mesh" />
             <geom class="tracker" euler="0 0 0" mesh="femur tracker mesh" pos="0 0 0" type="mesh" />
             <body euler="0 0 0" name="patella" pos="0 0 0">
-                <inertial
-                    fullinertia="8.050437146859407e-06 5.03777796133191e-06 5.09380183916241e-06 -8.36996939378859e-09 -1.6579383500434607e-07 -6.20224511993419e-07"
-                    mass="0.04051128232783104"
-                    pos="0.08702158919851656 0.17917502947062694 -0.33507166780519526" />
+                <inertial fullinertia="8.050437146859407e-06 5.03777796133191e-06 5.09380183916241e-06 -8.36996939378859e-09 -1.6579383500434607e-07 -6.20224511993419e-07" mass="0.04051128232783104" pos="0.08702158919851656 0.17917502947062694 -0.33507166780519526" />
                 <geom class="visual" euler="0 0 0" mesh="patella mesh" pos="0 0 0" type="mesh" />
                 <geom class="collision" mesh="patella_0" name="patella_0" type="mesh" />
                 <geom class="collision" mesh="patella_1" name="patella_1" type="mesh" />
                 <geom class="collision" mesh="patella_2" name="patella_2" type="mesh" />
             </body>
-            <site name="dMCL_start"
-                pos="{{dMCL.pos_start.x}} {{dMCL.pos_start.y}} {{dMCL.pos_start.z}}" size="0.001"
-                type="sphere" />
-            <site name="HKB_start" pos="{{HKB.pos_start.x}} {{HKB.pos_start.y}} {{HKB.pos_start.z}}"
-                size="0.001" type="sphere" />
-            <site name="LCL_start" pos="{{LCL.pos_start.x}} {{LCL.pos_start.y}} {{LCL.pos_start.z}}"
-                size="0.001" type="sphere" />
-            <site name="POL_start" pos="{{POL.pos_start.x}} {{POL.pos_start.y}} {{POL.pos_start.z}}"
-                size="0.001" type="sphere" />
-            <site name="PS_start" pos="{{PS.pos_start.x}} {{PS.pos_start.y}} {{PS.pos_start.z}}"
-                size="0.001" type="sphere" />
-            <site name="sMCL_start"
-                pos="{{sMCL.pos_start.x}} {{sMCL.pos_start.y}} {{sMCL.pos_start.z}}" size="0.001"
-                type="sphere" />
-            <site name="VKB_start" pos="{{VKB.pos_start.x}} {{VKB.pos_start.y}} {{VKB.pos_start.z}}"
-                size="0.001" type="sphere" />
+            <site name="dMCL_start" pos="0.036439365386962894 0.1270460662841797 -0.34141748046875003" size="0.001" type="sphere" />
+            <site name="HKB_start" pos="0.03266553115844727 0.1627947235107422 -0.33516192626953123" size="0.001" type="sphere" />
+            <site name="LCL_start" pos="0.03787437820434571 0.21168870544433593 -0.3351375732421875" size="0.001" type="sphere" />
+            <site name="POL_start" pos="0.03512559509277344 0.12541929626464843 -0.3359316101074219" size="0.001" type="sphere" />
+            <site name="PS_start" pos="0.036873523712158206 0.20842341613769533 -0.3415344543457031" size="0.001" type="sphere" />
+            <site name="sMCL_start" pos="0.038979415893554685 0.12602641296386718 -0.33768609619140627" size="0.001" type="sphere" />
+            <site name="VKB_start" pos="0.028822696685791016 0.17497718811035157 -0.3328540344238281" size="0.001" type="sphere" />
             <geom class="collision" mesh="femur_0" name="femur_0" type="mesh" />
             <geom class="collision" mesh="femur_1" name="femur_1" type="mesh" />
             <geom class="collision" mesh="femur_2" name="femur_2" type="mesh" />
@@ -157,51 +126,7 @@
             <geom class="collision" mesh="femur_7" name="femur_7" type="mesh" />
             <geom class="collision" mesh="femur_8" name="femur_8" type="mesh" />
             <geom class="collision" mesh="femur_9" name="femur_9" type="mesh" />
-            <site name="LP_start" pos="{{LP.pos_start.x}} {{LP.pos_start.y}} {{LP.pos_start.z}}"
-                size="0.001" type="sphere" />
+            <site name="LP_start" pos="0.08642813873291016 0.18136546325683595 -0.3579686584472656" size="0.001" type="sphere" />
         </body>
     </worldbody>
-    <tendon>
-        <spatial name="POL" stiffness="2000.0" damping="200" springlength="0.03824106618566672"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="POL_start" />
-            <site site="POL_end" />
-        </spatial>
-        <spatial name="HKB" stiffness="2000.0" damping="200" springlength="0.039496168793682666"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="HKB_start" />
-            <site site="HKB_end" />
-        </spatial>
-        <spatial name="PS" stiffness="2000.0" damping="200" springlength="0.06929178980221773"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="PS_start" />
-            <geom geom="PS_wrap" />
-            <site site="PS_end" />
-        </spatial>
-        <spatial name="dMCL" stiffness="2000.0" damping="200" springlength="0.03254581621081527"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="dMCL_start" />
-            <site site="dMCL_end" />
-        </spatial>
-        <spatial name="LCL" stiffness="2000.0" damping="200" springlength="0.05935186681604563"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="LCL_start" />
-            <site site="LCL_end" />
-        </spatial>
-        <spatial name="sMCL" stiffness="2000.0" damping="200" springlength="0.041187427070233186"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="sMCL_start" />
-            <site site="sMCL_end" />
-        </spatial>
-        <spatial name="VKB" stiffness="2000.0" damping="200" springlength="0.032489921074997936"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="VKB_start" />
-            <site site="VKB_end" />
-        </spatial>
-        <spatial name="LP" stiffness="2000.0" damping="200" springlength="0.046587925521048866"
-            width="0.002" rgba="0.9 0.2 0.2 0.9">
-            <site site="LP_start" />
-            <site site="LP_end" />
-        </spatial>
-    </tendon>
-</mujoco>
+    <tendon><spatial name="dMCL" stiffness="2000.0" damping="200" springlength="0.03254581621081527" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="dMCL_start" /><site site="dMCL_end" /></spatial><spatial name="HKB" stiffness="2000.0" damping="200" springlength="0.03949616879368267" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="HKB_start" /><site site="HKB_end" /></spatial><spatial name="LCL" stiffness="2000.0" damping="200" springlength="0.05935186681604563" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="LCL_start" /><site site="LCL_end" /></spatial><spatial name="LP" stiffness="2000.0" damping="200" springlength="0.046587925521048866" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="LP_start" /><site site="LP_end" /></spatial><spatial name="POL" stiffness="2000.0" damping="200" springlength="0.03824106618566672" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="POL_start" /><site site="POL_end" /></spatial><spatial name="PS" stiffness="2000.0" damping="200" springlength="0.06929178980221773" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="PS_start" /><geom geom="PS_wrap" /><site site="PS_end" /></spatial><spatial name="sMCL" stiffness="2000.0" damping="200" springlength="0.041187427070233186" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="sMCL_start" /><site site="sMCL_end" /></spatial><spatial name="VKB" stiffness="2000.0" damping="200" springlength="0.03248992107499793" width="0.002" rgba="0.9 0.2 0.2 0.9"><site site="VKB_start" /><site site="VKB_end" /></spatial></tendon></mujoco>

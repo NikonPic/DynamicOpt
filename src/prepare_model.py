@@ -9,7 +9,7 @@ import yaml
 
 
 # settings
-STL_PATH = '../assets/meshes/'
+STL_PATH = 'assets/meshes/'
 STL_SUB_PATH = 'convex_meshes'
 SCALE = 0.001  # from mm to m
 DENSITY_BONE = 1850  # kg / m**3
@@ -141,7 +141,7 @@ def recursive_mesh(elem, name, mesh_name):
         recursive_mesh(loc_elem, name, mesh_name)
 
 
-def add_zylinders(root, zyl_path='../assets/wrap'):
+def add_zylinders(root, zyl_path='assets/wrap'):
     names = ['femur', 'tibia']
     wrap_files = os.listdir(zyl_path)
 
@@ -404,7 +404,7 @@ if __name__ == '__main__':
     prepare_all()
     MODIFY_TEMPLATE = True
     if MODIFY_TEMPLATE:
-        FILENAME = '../knee_model_template.xml'
+        FILENAME = 'models\knee\knee_model_template.xml'
     prepare_all()
 
 # %%

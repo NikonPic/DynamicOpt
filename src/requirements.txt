@@ -13,4 +13,4 @@ elementpath
 mujoco
 mujoco_python_viewer
 hydra-core
-iphyton
+ipython
