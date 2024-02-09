@@ -37,8 +37,8 @@ import imageio
 from pyvirtualdisplay import Display
 
 
-display = Display(visible=0, size=(640, 640))
-display.start()
+#display = Display(visible=0, size=(640, 640))
+#display.start()
 
 
 TIME_LABEL = 'time in s'
@@ -74,7 +74,7 @@ def get_data_disk(name='data_disk', path='../measurement'):
     return data
 
 
-def get_data_hand(name='data_hand', path='../measurement'):
+def get_data_hand(name='data_hand', path='measurement'):
     with open(f'{path}/{name}.json') as f:
         data = json.load(f)
     return data
