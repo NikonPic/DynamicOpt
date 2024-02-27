@@ -386,8 +386,14 @@ class PPOSchedule(nn.Module):
 
         # logging
         now = datetime.now()
-        self.dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
-        logdir = f'./src/trained_models/{self.dt_string}'
+        #self.dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
+        self.d_string = now.strftime("%Y-%m-%d")
+
+        try: 
+            self.t_string
+        except:
+            self.t_string = now.strftime("%H-%M-%S")
+        logdir = f'outputs/{self.d_string}/{self.t_string}'
         os.mkdir(logdir)
         self.writer = SummaryWriter(log_dir=logdir)
 
@@ -647,7 +653,7 @@ class PPOSchedule(nn.Module):
             return
         fig, err = self.agents[0].log_image_progress()
         fig.savefig(
-            f'./src/trained_models/{self.dt_string}/fig_{self.epoch}.png')
+            f'outputs/{self.d_string}/{self.t_string}/fig_{self.epoch}.png')
         self.writer.add_scalar(
             "ALLG/val_err", float(err), self.epoch)
 
@@ -660,7 +666,7 @@ class PPOSchedule(nn.Module):
         _, _, _, parameters = self.actor(self.param_in, sample=False)
         parameters = parameters[0]
 
-        with open(f'./src/trained_models/{self.dt_string}/parameters_{self.epoch}.yaml', 'w') as f:
+        with open(f'outputs/{self.d_string}/{self.t_string}/parameters_{self.epoch}.yaml', 'w') as f:
             yaml.dump(parameters, f)
     # ---------------------------------------------------------------------------------------------------
 

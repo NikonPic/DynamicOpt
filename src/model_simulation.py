@@ -46,7 +46,7 @@ SCENE = 'scene.xml'
 LEGEND_LOC = 'lower right'
 
 
-def get_data(smooth=True, t=0.8, name='data', path='../measurement', filterit=False, filter_app=None, threshold=0.1, tste=None):
+def get_data(smooth=True, t=0.8, name='data', path='measurement', filterit=False, filter_app=None, threshold=0.1, tste=None):
     with open(f'{path}/{name}.json') as f:
         data = json.load(f)
     if smooth:
@@ -68,7 +68,7 @@ def get_data(smooth=True, t=0.8, name='data', path='../measurement', filterit=Fa
     return data
 
 
-def get_data_disk(name='data_disk', path='../measurement'):
+def get_data_disk(name='data_disk', path='measurement'):
     with open(f'{path}/{name}.json') as f:
         data = json.load(f)
     return data
@@ -1124,7 +1124,7 @@ def create_data_surr(lim1=0, lim2=5000):
         ft_arr.append(f)
     data_surr['ft'] = ft_arr[lim1:lim2]
 
-    with open('../measurement/data_surr.json', 'w') as f:
+    with open('measurement/data_surr.json', 'w') as f:
         json.dump(data_surr, f)
 
     return data_surr

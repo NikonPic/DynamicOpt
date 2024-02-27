@@ -26,7 +26,7 @@ STIFFNESS = 2000
 
 names = ['femur', 'tibia', 'fibula', 'patella']
 
-FILENAME = 'models\knee\knee_model.xml'
+FILENAME = 'models/knee/knee_model.xml'
 TEMPLATE_NAME = 'models/knee/knee_model_template.xml'
 
 # root names
@@ -404,7 +404,7 @@ if __name__ == '__main__':
     prepare_all()
     MODIFY_TEMPLATE = True
     if MODIFY_TEMPLATE:
-        FILENAME = 'models\knee\knee_model_template.xml'
+        FILENAME = 'models/knee/knee_model_template.xml'
     prepare_all()
 
 # %%

@@ -179,9 +179,9 @@ def calculate_angular_velocities3(qs, dt=0.01):
 if __name__ == '__main__':
     cfg = EnvSettings(
         model_type='knee',
-        path_ext='../models/knee/',
-        scene_path='../models/knee/scene.xml',
-        param_path='../models/knee',
+        path_ext='models/knee/',
+        scene_path='models/knee/scene.xml',
+        param_path='models/knee',
         param_file='parameters_data_gen.yaml',
         crit_speed=20,
         max_episode_len=500,
@@ -232,7 +232,7 @@ if __name__ == '__main__':
         'q': qpos.tolist()
     }
 
-    with open('../measurement/data_knee_random.json', 'w') as f:
+    with open('measurement/data_knee_random.json', 'w') as f:
         json.dump(data_disk, f)
 
 # %%
@@ -278,7 +278,7 @@ data_knee = {
         'torque_ext': ft_ext[:, 3:].tolist(),
         's_app': s_app,
 }
-with open('../measurement/data_knee_random.json', 'w') as f:
+with open('measurement/data_knee_random.json', 'w') as f:
     json.dump(data_knee, f)
 # %%
 
