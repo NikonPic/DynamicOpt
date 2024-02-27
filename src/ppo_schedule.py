@@ -6,7 +6,7 @@ Manage multiple environments
 Use Proximal Policy Optimization to find the unidentified parameters
 """
 import copy
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import time
 from typing import List
@@ -392,6 +392,7 @@ class PPOSchedule(nn.Module):
         try: 
             self.t_string
         except:
+            #now = now + timedelta(0,-3)
             self.t_string = now.strftime("%H-%M-%S")
         logdir = f'outputs/{self.d_string}/{self.t_string}'
         os.mkdir(logdir)

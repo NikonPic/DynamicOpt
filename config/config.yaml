@@ -24,7 +24,7 @@ critic:
 general:
   num_workers: 5
   num_trainers: 2
-  epochs: 10000
+  epochs: 100
   cuda_device: 0
   seed: 50
 

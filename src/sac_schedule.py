@@ -372,7 +372,7 @@ class SACSchedule(nn.Module):
         # logging
         now = datetime.now()
         self.dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
-        logdir = f'./src/trained_models/{self.dt_string}'
+        logdir = f'src/trained_models/{self.dt_string}'
         os.mkdir(logdir)
         self.writer = SummaryWriter(log_dir=logdir)
 
@@ -477,7 +477,7 @@ class SACSchedule(nn.Module):
             sub_dones = self.transitions.done[:self.queue_counter]
             sub_transitions = TransitionClass(
                 sub_states, sub_actions, sub_rewards, sub_next_states, sub_dones)
-            print(len(sub_actions))
+            print('sub actions:', len(sub_actions))
 
             self.state_mean = np.mean(sub_states, axis=0)
             self.state_std = np.std(sub_states, axis=0)
@@ -575,10 +575,10 @@ class SACSchedule(nn.Module):
             self.optimizer_actor.step()
             
             # Train simlearn
-            #self.optimizer_simlearn.zero_grad()
-            #loss_siml = self.siml_loss(batch)
-            #loss_siml.backward()
-            #self.optimizer_simlearn.step()
+            self.optimizer_simlearn.zero_grad()
+            loss_siml = self.siml_loss(batch)
+            loss_siml.backward()
+            self.optimizer_simlearn.step()
 
             # Train critic
             self.optimizer_critic.zero_grad()

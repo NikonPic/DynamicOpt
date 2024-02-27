@@ -19,3 +19,5 @@ pyvirtualdisplay
 # prepare model
 numpy-stl
 trimesh
+imageio[pyav]
+imageio[ffmpeg]
