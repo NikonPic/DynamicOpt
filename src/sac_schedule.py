@@ -29,7 +29,7 @@ from tqdm import tqdm
 from functools import wraps
 from itertools import chain
 
-
+# %%
 cs = ConfigStore.instance()
 cs.store(name='ppo_config', node=OverallSettings)
 
@@ -761,12 +761,16 @@ class SACSchedule(nn.Module):
 
 @hydra.main(version_base=None, config_path="../config", config_name="config")
 def main(cfg: OverallSettings):
+    ava = torch.cuda.is_available()
+    print('cuda is available:', ava)
     trainer = SACSchedule(cfg)
     trainer.run_training()
 
 
 # %%
 if __name__ == '__main__':
+    then = datetime.now()
     main()
+    print('elapsed time:', datetime.now()-then)
 
 # %%

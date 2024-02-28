@@ -6,7 +6,7 @@ defaults:
 # actor details
 actor:
   use_std: False
-  lr: 0
+  lr: 1.0e-6
   width: 48
   reinforce: True
   max_grad_norm: 0.1
