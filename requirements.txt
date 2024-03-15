@@ -14,10 +14,3 @@ mujoco
 mujoco_python_viewer
 hydra-core
 ipython
-pyvirtualdisplay
-
-# prepare model
-numpy-stl
-trimesh
-imageio[pyav]
-imageio[ffmpeg]
