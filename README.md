@@ -12,6 +12,9 @@ This research presents a new method using reinforcement learning to improve the 
 - Modify the respective config file as desired for your train run.
 - Run "python src/main.py"
 
+## Results 
+<img src="./results/video.gif" alt="Knee Joint Analysis" width="800"/>
+
 ## Key Figures
 
 <table>
